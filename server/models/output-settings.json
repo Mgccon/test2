@@ -1,0 +1,44 @@
+{
+  "m2m:output": {
+    "$": {
+			"xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+			"xmlns:m2m": "urn:com:ericsson:schema:xml:m2m:protocols:vnd.ericsson.m2m.input"
+		},
+    "m2m:data": [{
+      "m2m:sourceIdentifiers": {
+        "m2m:operator": { "m2m:urn": "iotaas_operator" },
+        "m2m:domainApplication": {
+          "m2m:extIds": { "m2m:id": "iotaas_operator$dispatcherApp" },
+          "m2m:urn": "dispatcherApp"
+        },
+        "m2m:gatewayGroup": { "m2m:urn": ".#CityBelgrade21" },
+        "m2m:gateway": {
+          "m2m:extIds": { "m2m:id": "iotaas_operator$SP_Belgrade_2" },
+          "m2m:urn": ".#CityBelgrade21.#ParkingSpot-Specification1"
+        },
+        "m2m:sensor": { "m2m:urn": ".#CityBelgrade21.#ParkingSpot-Specification1.#ParkingSensor-Specification1" },
+        "m2m:resource": { "m2m:urn": ".#CityBelgrade21.#ParkingSpot-Specification1.#ParkingSensor-Specification1.#ParkingSpotStatus-Specification1" },
+        "m2m:enterpriseCustomer": {
+          "m2m:extIds": { "m2m:id": "iotaas_operator$SerbianGovernment" },
+          "m2m:urn": "SerbianGovernment"
+        },
+        "m2m:user": { "m2m:urn": "SP_Belgrade_User1" },
+        "m2m:gatewayGroupSpec": { "m2m:urn": "City-Specification" },
+        "m2m:gatewaySpec": { "m2m:urn": "ParkingSpot-Specification" },
+        "m2m:sensorSpec": { "m2m:urn": "ParkingSensor-Specification" },
+        "m2m:resourceSpec": {
+          "m2m:extIds": { "m2m:id": "iotaas_operator$ParkingSpotStatusSpecification" },
+          "m2m:urn": "ParkingSpotStatus-Specification"
+        }
+      },
+      "m2m:value": {
+				"_": "true",
+				"$": {
+					"type": "string"
+				}
+			},
+      "m2m:timestamp": "2016-02-28T19:31:00Z",
+      "m2m:metadata": { "m2m:messageId": "data" }
+    }]
+  }
+}

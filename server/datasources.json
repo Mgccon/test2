@@ -1,0 +1,174 @@
+{
+  "datahubapp": {
+    "name": "datahubapp",
+    "connector": "rest",
+    "debug": "true",
+    "operations": [
+      {
+        "template": {
+          "method": "POST",
+          "url": "http://datahub:8080/collections/{collection_id:string}/messages",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "user": "{user:string}",
+            "password": "{password:string}",
+            "device_id": "{device_id:string}",
+            "time": "{time:number}",
+            "location": "{location:string}",
+            "data_type": "{data_type:string}"
+          },
+          "body": {
+            "message": "{message}"
+          }
+        },
+        "functions": {
+          "createMessage": [
+            "message",
+            "collection_id",
+            "user",
+            "password",
+            "device_id",
+            "time",
+            "location",
+            "data_type"
+          ]
+        }
+      },{
+        "template": {
+          "method": "POST",
+          "url": "http://datahub:8080/collections/{collection_id:string}/messages",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "EricssonSSO": "{EricssonSSO:string}",
+            "device_id": "{device_id:string}",
+            "time": "{time:number}",
+            "location": "{location:string}",
+            "data_type": "{data_type:string}"
+          },
+          "body": {
+            "message": "{message}"
+          }
+        },
+        "functions": {
+          "createMessageViaToken": [
+            "message",
+            "collection_id",
+            "EricssonSSO",
+            "device_id",
+            "time",
+            "location",
+            "data_type"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://datahub:8080/collections/{collection_id:string}/messages",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "text/plain"
+          },
+          "query": {
+            "user": "{user:string}",
+            "object_id": "{object_id:string}",
+            "time_from": "{time_from:number}",
+            "time_to": "{time_to:number}",
+            "data_type": "{data_type:string}"
+          }
+        },
+        "functions": {
+          "getMessages": [
+            "collection_id",
+            "user",
+            "object_id",
+            "time_from",
+            "time_to",
+            "data_type"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://datahub:8080/collections/{collection_id:string}/messages",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "text/plain"
+          },
+          "query": {
+            "EricssonSSO": "{EricssonSSO:string}",
+            "object_id": "{object_id:string}",
+            "time_from": "{time_from:number}",
+            "time_to": "{time_to:number}",
+            "data_type": "{data_type:string}"
+          }
+        },
+        "functions": {
+          "getMessagesViaToken": [
+            "collection_id",
+            "EricssonSSO",
+            "object_id",
+            "time_from",
+            "time_to",
+            "data_type"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://datahub:8080/notifications",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "text/plain"
+          },
+          "query": {
+            "user": "{user:string}",
+            "remove_notifications": "{remove_notifications:string}",
+            "time_from": "{time_from:number}",
+            "time_to": "{time_to:number}"
+          }
+        },
+        "functions": {
+          "notifications": [
+            "user",
+            "remove_notifications",
+            "time_from",
+            "time_to"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://datahub:8080/notifications",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "text/plain"
+          },
+          "query": {
+            "EricssonSSO": "{EricssonSSO:string}",
+            "remove_notifications": "{remove_notifications:string}",
+            "time_from": "{time_from:number}",
+            "time_to": "{time_to:number}"
+          }
+        },
+        "functions": {
+          "notificationsViaToken": [
+            "EricssonSSO",
+            "remove_notifications",
+            "time_from",
+            "time_to"
+          ]
+        }
+      }
+    ]
+  }
+}

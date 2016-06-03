@@ -1,0 +1,16 @@
+{
+  "file":{
+    "level":"debug",
+    "timestamp":true,
+    "filename":"smartparking.log",
+    "maxsize":"1024000",
+    "maxFiles":10,
+    "json":true,
+    "prettyPrint":true,
+    "showLevel":true,
+    "tailable":true
+  },
+  "console":{
+    "level":"verbose"
+  }
+}
